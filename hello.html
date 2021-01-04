@@ -16,8 +16,21 @@
 
 <script type="text/babel">
     function Welcome(props) {
-        return <h1>Welcome, {props.name}!</h1>;
+        return (
+            <div>
+            <h1>Welcome, {props.name}!</h1>
+            <h2>{props.tagLine}</h2>
+            </div>
+        )
     }    
+
+    let element = (
+        <div>
+            <Welcome name ="Alan" tagLine="super smart" />
+            <Welcome name ="Agnes" tagLine="super cool" />
+            <Welcome name ="Elizabeth" tagLine="super nice" />
+        </div>
+    )
 
     // class
     // class Welcome extends React.Component {
@@ -34,10 +47,9 @@
     // }
     // const element = <Welcome callback={notify} />
 
-
     // 5. Actual Render to the page
     ReactDOM.render(
-        <Welcome name ="Alan" />,
+        element,
         document.getElementById('root')
     );
 
